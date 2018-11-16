@@ -1,0 +1,5 @@
+SELECT `plaats` ,count(`plaats`)
+FROM `kroeg`
+GROUP BY `plaats`
+HAVING COUNT(`plaats`) > 14
+ORDER BY count(`plaats`) DESC
