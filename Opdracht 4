@@ -1,0 +1,5 @@
+SELECT  count(`land`), `land` 
+FROM `brouwer`
+GROUP BY `land`
+ORDER BY count(`land`) DESC
+LIMIT 5
