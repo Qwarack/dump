@@ -1,0 +1,14 @@
+SELECT `naam`
+FROM `kroeg`
+WHERE `kroegcode` IN (
+	SELECT `kroegcode`
+	FROM `schenkt`
+	WHERE `biercode` IN (
+		SELECT `biercode`
+		FROM `bier`
+		WHERE `alcohol` IN (
+			SELECT round(avg(`alcohol`), 0)
+			FROM `bier`
+		)	
+	)
+)	
