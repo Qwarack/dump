@@ -1,9 +1,9 @@
 SELECT `naam`
 FROM `kroeg`
-WHERE `kroegcode` =  (
+WHERE `kroegcode` in  (
 	SELECT `kroegcode` 
 	FROM `schenkt`
-	WHERE biercode =   (
+	WHERE biercode in   (
 		SELECT `biercode`
 		FROM `bier`
 		WHERE `naam` = 'CALANDA ICE'	
