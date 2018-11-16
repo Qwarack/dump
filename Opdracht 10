@@ -1,4 +1,4 @@
-SELECT `naam` , `kroegcode` 
+SELECT `naam` 
 FROM `kroeg`
 WHERE `kroegcode` IN (
 	SELECT `kroegcode`
