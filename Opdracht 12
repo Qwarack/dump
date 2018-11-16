@@ -1,0 +1,10 @@
+SELECT `naam`
+FROM `kroeg`
+WHERE `naam` LIKE 'DE *' AND `kroegcode` IN (
+	SELECT 
+	FROM
+	WHERE IN (
+		SELECT
+		FROM 
+	)
+)
