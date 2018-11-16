@@ -1,0 +1,8 @@
+SELECT `naam` , `kroegcode` 
+FROM `kroeg`
+WHERE `kroegcode` IN (
+	SELECT `kroegcode`
+	FROM `schenkt`
+	GROUP BY `kroegcode`
+	HAVING count(`biercode`) > 9 
+)
