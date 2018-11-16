@@ -1,0 +1,4 @@
+
+SELECT count (`land`), `land`
+FROM `brouwer`
+GROUP BY `land`;
