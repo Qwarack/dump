@@ -1,0 +1,2 @@
+SELECT max(`alcohol`) - min(`alcohol`) AS Verschil
+FROM `bier`
