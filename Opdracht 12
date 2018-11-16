@@ -1,10 +1,11 @@
-SELECT `naam`
+SELECT `naam`, `plaats` , `kroegcode`
 FROM `kroeg`
-WHERE `naam` LIKE 'DE *' AND `kroegcode` IN (
-	SELECT 
-	FROM
-	WHERE IN (
-		SELECT
-		FROM 
+WHERE `naam` LIKE 'DE*' AND `kroegcode` IN (
+	SELECT `kroegcode`
+	FROM `schenkt`
+	WHERE `biercode` in (
+		SELECT `biercode`
+		FROM `bier`
+		WHERE NOT `type` = 'SPECIAL' AND NOT`type` = 'ALE, BELGIA' 
 	)
 )
