@@ -1,0 +1,11 @@
+SELECT `naam`
+FROM `kroeg`
+WHERE `kroegcode` =  (
+	SELECT `kroegcode` 
+	FROM `schenkt`
+	WHERE biercode =   (
+		SELECT `biercode`
+		FROM `bier`
+		WHERE `naam` = 'CALANDA ICE'	
+	)
+)
