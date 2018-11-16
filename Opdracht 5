@@ -1,0 +1,11 @@
+SELECT `naam`
+FROM `kroeg`
+WHERE `kroegcode` IN (
+	SELECT `kroegcode`
+	FROM `schenkt`
+	WHERE `biercode` IN (
+		SELECT `biercode` 
+		FROM `bier`
+		WHERE `brouwcode` > 700
+	)
+)
