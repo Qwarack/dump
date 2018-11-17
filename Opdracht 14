@@ -1,0 +1,17 @@
+SELECT  `plaats` , count(`plaats`)
+FROM `kroeg`
+WHERE `kroegcode` IN (
+	SELECT `kroegcode`
+	FROM `schenkt`
+	WHERE `biercode` IN (
+		SELECT `biercode`
+		FROM `bier`
+		WHERE `brouwcode` IN (
+			SELECT `brouwcode`
+			FROM `brouwer`
+			WHERE `land` LIKE '*BEL*' 
+		)
+	)
+)
+GROUP BY `plaats`
+ORDER BY `plaats` 
