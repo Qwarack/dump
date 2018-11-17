@@ -1,6 +1,6 @@
-SELECT `naam`, `plaats` , `kroegcode`
+SELECT `naam`, `plaats` 
 FROM `kroeg`
-WHERE `naam` LIKE 'DE*' AND `kroegcode` IN (
+WHERE `naam` LIKE 'DE*' AND `plaats` = 'AMSTERDAM' AND `kroegcode` IN (
 	SELECT `kroegcode`
 	FROM `schenkt`
 	WHERE `biercode` in (
